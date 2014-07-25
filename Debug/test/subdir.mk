@@ -4,20 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/feedhandler.cpp \
-../src/main.cpp 
+../test/test.cpp 
 
 OBJS += \
-./src/feedhandler.o \
-./src/main.o 
+./test/test.o 
 
 CPP_DEPS += \
-./src/feedhandler.d \
-./src/main.d 
+./test/test.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-src/%.o: ../src/%.cpp
+test/%.o: ../test/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
 	g++ -std=c++0x -O0 -g3 -Wall -Wextra -Werror -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
