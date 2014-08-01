@@ -29,11 +29,15 @@ int main(int argc, char **argv) {
 	}
 	std::cout << "Successfully opened file " << argv[1] << std::endl;
 
-	feedhandler fh(1);
+	feedhandler fh(10, std::cerr);
 	std::string line;
 	while (!infile.eof() && !infile.bad())
 	{
 		getline(infile, line);
+		if (line.empty())
+		{
+			continue;
+		}
 		fh.process_message(line);
 	}
 

@@ -4,19 +4,16 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 CPP_SRCS += \
-../src/feedhandler.cpp \
-../src/feedhandler_main.cpp \
-../src/orderbook.cpp 
+../src/orderbook.cpp \
+../src/simulator_main.cpp 
 
 OBJS += \
-./src/feedhandler.o \
-./src/feedhandler_main.o \
-./src/orderbook.o 
+./src/orderbook.o \
+./src/simulator_main.o 
 
 CPP_DEPS += \
-./src/feedhandler.d \
-./src/feedhandler_main.d \
-./src/orderbook.d 
+./src/orderbook.d \
+./src/simulator_main.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
